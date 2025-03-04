@@ -1,0 +1,3 @@
+public enum Position {
+    DIRECTOR, DEPUTY_DIRECTOR, ACCOUNTANT, EMPLOYEE
+}
