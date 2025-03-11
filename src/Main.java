@@ -1,35 +1,72 @@
-import Decorator.BaseTask;
-import Decorator.DirectorDecorator;
-import Decorator.Task;
-import State.DirectorState;
-import State.EmployeeStateContext;
-import Strategy.EmployeeStrategy;
-import Strategy.EmployeeStrategyContext;
+import TH11_3.Adapter.JsonService;
+import TH11_3.Adapter.XMLService;
+import TH11_3.Adapter.XmlJsonAdapter;
+import TH11_3.Observer.Investor;
+import TH11_3.Observer.Stock;
+import TH11_3.Observer.Task;
+import TH11_3.Observer.TeamMember;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== Employee Tasks Examples in Different Approaches ===");
+        Stock appleStock = new Stock();
+        Investor investor1 = new Investor("Alice");
+        Investor investor2 = new Investor("Bob");
 
-        // Approach 1: Simple switch-case (không sử dụng design pattern)
-        System.out.println("\n-- Approach 1: No pattern");
-        NoPattern employeeSimple = new NoPattern(Position.ACCOUNTANT);
-        employeeSimple.printTasks();
+        appleStock.attach(investor1);
+        appleStock.attach(investor2);
 
-        // Approach 2: State Pattern
-        System.out.println("\n-- Approach 2: State Pattern");
-        EmployeeStateContext employeeStateContext = new EmployeeStateContext(new DirectorState());
-        employeeStateContext.printTasks();
+        System.out.println("Thay đổi giá cổ phiếu:");
+        appleStock.setPrice(150.00);
 
-        // Approach 3: Decorator Pattern
-        System.out.println("\n-- Approach 3: Decorator Pattern");
-        Task baseTask = new BaseTask();
-        // Ví dụ: sử dụng AccountantDecorator cho chức vụ Kế Toán
-        Task directorTask = new DirectorDecorator(baseTask);
-        System.out.println("Decorator Pattern Approach => Tasks: " + directorTask.getTaskDescription());
+        // Mô phỏng thông báo cho công việc
+        Task task = new Task();
+        TeamMember member1 = new TeamMember("Charlie");
+        TeamMember member2 = new TeamMember("Diana");
 
-        // Approach 4: Strategy Pattern
-        System.out.println("\n-- Approach 4: Strategy Pattern");
-        EmployeeStrategyContext employeeStrategyContext = new EmployeeStrategyContext(new EmployeeStrategy());
-        employeeStrategyContext.printTasks();
+        task.attach(member1);
+        task.attach(member2);
+
+        System.out.println("\nCập nhật trạng thái công việc:");
+        task.setStatus("Đang tiến hành");
+        task.setStatus("Hoàn thành");
+//        Product coffee = new Product("Cà phê", 3.5);
+//        Product water = new Product("Nước suối", 1.0);
+//        Product milkTea = new Product("Trà sữa", 4.0);
+//
+//        // Tạo bàn và thêm các sản phẩm vào bàn
+//        Table table1 = new Table(1);
+//        table1.add(coffee);
+//        table1.add(water);
+//
+//        Table table2 = new Table(2);
+//        table2.add(milkTea);
+//        table2.add(coffee);
+//        table2.add(water);
+//
+//        // Tạo quán cà phê và thêm các bàn vào quán
+//        CoffeeShop shop = new CoffeeShop();
+//        shop.add(table1);
+//        shop.add(table2);
+//
+//        // In ra tổng tiền của từng bàn
+//        System.out.println(table1);
+//        System.out.println(table2);
+//
+//        // In ra doanh thu của quán cà phê
+//        System.out.println(shop);
+        // Tạo đối tượng XMLService (hệ thống chỉ hỗ trợ XML)
+//        XMLService xmlService = new XMLService();
+//
+//        // Tạo adapter để chuyển đổi giữa JSON và XML
+//        JsonService adapter = new XmlJsonAdapter(xmlService);
+//
+//        // Dữ liệu đầu vào ở dạng JSON từ client
+//        String jsonRequest = "{\"data\": \"sample\"}";
+//        System.out.println("Client gửi JSON: " + jsonRequest);
+//
+//        // Xử lý thông qua adapter
+//        String jsonResponse = adapter.processJson(jsonRequest);
+//
+//        System.out.println("Client nhận JSON: " + jsonResponse);
     }
 }

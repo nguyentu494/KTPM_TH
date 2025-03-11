@@ -1,4 +1,4 @@
-package Strategy;
+package TH4_3.Strategy;
 
 public class EmployeeStrategyContext {
     private TaskStrategy strategy;
@@ -12,7 +12,7 @@ public class EmployeeStrategyContext {
     }
 
     public void printTasks() {
-        System.out.print("Strategy Pattern Approach => Tasks: ");
+        System.out.print("TH4_3.Strategy Pattern Approach => Tasks: ");
         strategy.printTasks();
     }
 }

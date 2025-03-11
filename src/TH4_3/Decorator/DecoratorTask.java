@@ -1,4 +1,4 @@
-package Decorator;
+package TH4_3.Decorator;
 
 public class DecoratorTask implements Task {
     protected Task decoratedTask;

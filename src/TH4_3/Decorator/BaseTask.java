@@ -1,4 +1,4 @@
-package Decorator;
+package TH4_3.Decorator;
 
 public class BaseTask implements Task {
     @Override

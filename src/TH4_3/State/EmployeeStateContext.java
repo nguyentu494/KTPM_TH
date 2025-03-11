@@ -1,4 +1,4 @@
-package State;
+package TH4_3.State;
 
 public class EmployeeStateContext {
     private TaskState state;
@@ -12,7 +12,7 @@ public class EmployeeStateContext {
     }
 
     public void printTasks() {
-        System.out.print("State Pattern Approach => Tasks: ");
+        System.out.print("TH4_3.State Pattern Approach => Tasks: ");
         state.printTasks();
     }
 }

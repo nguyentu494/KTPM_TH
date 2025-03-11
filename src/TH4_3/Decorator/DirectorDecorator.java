@@ -1,4 +1,4 @@
-package Decorator;
+package TH4_3.Decorator;
 
 public class DirectorDecorator extends DecoratorTask {
     public DirectorDecorator(Task decoratedTask) {
