@@ -220,5 +220,7 @@ docker run -d -p 8080:80 my_nginx_image
 ```
 Chạy container từ image `my_nginx_image` và ánh xạ cổng 8080.
 ![img_31.png](img_31.png)
+
+
 ---
 
